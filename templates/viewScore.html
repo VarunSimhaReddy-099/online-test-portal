@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block title %} View Score {% endblock %}{% block
+buttons %}<a class="nav-link text-white" href="{{ url_for('add') }}"
+  >Add Questions</a
+>
+<a class="nav-link text-white" href="{{ url_for('list_questions') }}"
+  >View Questions</a
+>
+<a class="nav-link text-white" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %} {% block body %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Sl.No</th>
+      <th scope="col">Email</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  {% for scorer in score %}
+  <tr>
+    <th scope="col">{{loop.index}}</th>
+    <td>{{scorer.name}}</td>
+    <td>{{scorer.score}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

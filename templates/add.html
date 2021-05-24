@@ -1,0 +1,113 @@
+{% extends "layout.html" %} {% block title %} Add Questions {% endblock %}{%
+block buttons %}
+<a class="nav-link text-white" href="{{ url_for('list_questions') }}"
+  >View Questions</a
+>
+<a class="nav-link text-white" href="{{ url_for('viewScore') }}">Results</a>
+<a class="nav-link text-white" href="{{ url_for('createAdmin') }}"
+  >Create Admin</a
+>
+<a class="nav-link text-white" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %} {% block body %}
+<form method="POST" action="/add" autocomplete="off">
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"
+      ><h6>Enter the question below</h6></label
+    >
+    <textarea
+      class="form-control my-3"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      name="question"
+      required
+    ></textarea>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input
+            type="radio"
+            aria-label="Radio button for following text input"
+            name="crctOption"
+            value="A"
+            required
+          />
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        name="value1"
+        aria-label="Text input with radio button"
+        required
+      />
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input
+            type="radio"
+            aria-label="Radio button for following text input"
+            name="crctOption"
+            value="B"
+            required
+          />
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        name="value2"
+        aria-label="Text input with radio button"
+        required
+      />
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input
+            type="radio"
+            aria-label="Radio button for following text input"
+            name="crctOption"
+            value="C"
+            required
+          />
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        name="value3"
+        aria-label="Text input with radio button"
+        required
+      />
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input
+            type="radio"
+            aria-label="Radio button for following text input"
+            name="crctOption"
+            value="D"
+            required
+          />
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        name="value4"
+        aria-label="Text input with radio button"
+        required
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-dark btn-block">
+      Add To Database
+    </button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block title %} Create Admin {% endblock %}{%
+block buttons %}<a class="nav-link text-white" href="{{ url_for('add') }}"
+  >Add Questions</a
+>
+<a class="nav-link text-white" href="{{ url_for('list_questions') }}"
+  >View Questions</a
+>
+
+<a class="nav-link text-white" href="{{ url_for('viewScore') }}">Results</a>
+
+<a class="nav-link text-white" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %} {% block body %}
+
+<div class="alert alert-info" style="text-align: center">
+  Add Firebase UniqueId <br />To make a User Admin
+</div>
+<form action="/admin/createadmin" method="POST" autocomplete="off">
+  <input
+    type="text"
+    class="form-control my-3"
+    name="uniqueId"
+    aria-label="Text input with radio button"
+    required
+  />
+  <button type="submit" class="btn btn-outline-dark btn-block my-3">
+    Create Admin
+  </button>
+  {% if message %}
+  <div class="alert alert-success" style="text-align: center">{{message}}</div>
+  {% endif %}
+</form>
+{% endblock %}

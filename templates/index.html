@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block title %} Home Page {% endblock %} 
+{% block buttons %}<a class="nav-link text-white" href="{{ url_for('login') }}"
+  >Login</a
+>
+<a class="nav-link text-white" href="{{ url_for('register') }}"
+  >Register</a
+>
+{% endblock %}
+{% block body %}
+<p>Please <a href="{{ url_for('login') }}">Login here</a> to take / create a test</p>
+<p>Don't have an account..? <a href="{{url_for('register')}}">Register with us</a></p>
+<img src="../static/image.svg" alt="Landing img" height="350px" />
+<p>
+  This Web Appication has been created by using 
+  <ul>
+      <li>Python</li>
+      <li>Flask</li>
+      <li>SQL</li>
+      <li>Firebase Authentication</li>
+      <li>Bootstrap</li>
+  </ul>
+</p>
+
+{% endblock %}

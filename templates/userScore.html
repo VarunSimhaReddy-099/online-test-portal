@@ -1,0 +1,20 @@
+{% extends "layout.html" %} {% block title %} Result {% endblock %} {% block
+buttons %}<a class="nav-link text-white" href="{{ url_for('logout') }}"
+  >Logout</a
+>
+{% endblock %}{% block body %}
+<img src="../static/score.svg" alt="" srcset="" />
+<div class="alert alert-info" style="text-align: center">{{message}}</div>
+
+<h2 class="my-3" style="text-align: center">{{result}} Marks</h2>
+{% if taketest %}
+<form action="/retake" method="POST" autocomplete="off">
+  <button type="submit" class="btn btn-secondary btn-block text-white">
+    Take Test Again
+  </button>
+  <a class="btn btn-secondary my-3 btn-block" href="/logout">Logout</a>
+</form>
+{% else %}
+<a class="btn btn-secondary my-3 btn-block" href="/">Go to Home</a>
+
+{% endif %} {% endblock %}

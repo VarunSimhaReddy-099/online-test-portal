@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block title %} Questions {% endblock %}{% block
+buttons %}<a class="nav-link text-white" href="{{ url_for('logout') }}"
+  >Logout</a
+>
+{% endblock %} {% block body %}
+<form action="/validate" method="POST" autocomplete="off">
+  <div class="form-group">
+    {% for question in Questions %}
+    <p>{{loop.index}}. {{question.question}}</p>
+    <input
+      type="radio"
+      id="option1{{question.id}}"
+      name="{{question.id}}"
+      value="A"
+      required
+    />
+    <label for="option1{{question.id}}">{{question.value_1}}</label><br />
+    <input
+      type="radio"
+      id="option2{{question.id}}"
+      name="{{question.id}}"
+      value="B"
+      required
+    />
+    <label for="option2{{question.id}}">{{question.value_2}}</label><br />
+    <input
+      type="radio"
+      id="option3{{question.id}}"
+      name="{{question.id}}"
+      value="C"
+      required
+    />
+    <label for="option3{{question.id}}">{{question.value_3}}</label><br />
+    <input
+      type="radio"
+      id="option4{{question.id}}"
+      name="{{question.id}}"
+      value="D"
+      required
+    />
+    <label for="option4{{question.id}}">{{question.value_4}}</label><br />
+    <br />
+    {% endfor %}
+    <button class="btn btn-block btn-secondary text-white" type="submit">
+      Submit
+    </button>
+  </div>
+</form>
+{% endblock %}

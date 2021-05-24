@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} {% block title %} Reset Password {% endblock %} {%
+block body %}
+<div class="container form-group">
+  <h3 class="my-1">Reset your password</h3>
+  <p style="color: #007bff; font-weight: bold">
+    Just submit your email address and you'll be on your way...
+  </p>
+  <form action="/forgotpassword" method="POST">
+    <label for="email">Email address</label><br />
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      id="email"
+      autocomplete="off"
+      required
+    /><br />
+    <button class="btn btn-secondary btn-block" type="submit">Submit</button>
+  </form>
+  {% if error %}
+  <div class="alert alert-info m-3" role="alert">{{error}}</div>
+  {% endif %}
+</div>
+{% endblock %}

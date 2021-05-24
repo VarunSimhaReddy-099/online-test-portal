@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block title %} Questions(Admin) {% endblock %}{%
+block buttons %}<a class="nav-link text-white" href="{{ url_for('add') }}"
+  >Add Questions</a
+>
+<a class="nav-link text-white" href="{{ url_for('viewScore') }}">Results</a>
+<a class="nav-link text-white" href="{{ url_for('createAdmin') }}"
+  >Create Admin</a
+>
+
+<a class="nav-link text-white" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %} {% block body %}
+<form action="/admin/view" method="POST" autocomplete="off">
+  <div class="form-group">
+    {% for question in Questions %}
+    <p>{{loop.index}} {{question.question}}</p>
+    <input
+      type="radio"
+      id="option1{{question.id}}"
+      name="{{question.id}}"
+      value="A"
+    />
+    <label for="option1{{question.id}}">{{question.value_1}}</label><br />
+    <input
+      type="radio"
+      id="option2{{question.id}}"
+      name="{{question.id}}"
+      value="B"
+    />
+    <label for="option2{{question.id}}">{{question.value_2}}</label><br />
+    <input
+      type="radio"
+      id="option3{{question.id}}"
+      name="{{question.id}}"
+      value="C"
+    />
+    <label for="option3{{question.id}}">{{question.value_3}}</label><br />
+    <input
+      type="radio"
+      id="option4{{question.id}}"
+      name="{{question.id}}"
+      value="D"
+    />
+    <label for="option4{{question.id}}">{{question.value_4}}</label><br />
+    <button
+      type="submit"
+      class="btn btn-secondary btn-block my-3"
+      name="qNumber"
+      value="{{question.id}}"
+    >
+      Delete
+    </button>
+    {% endfor %}
+  </div>
+</form>
+{% endblock %}
