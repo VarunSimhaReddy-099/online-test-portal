@@ -31,3 +31,10 @@ The key concept is to minimize the amount of paper and convert all forms of docu
  2. Get the results:- After answering all the questions, the student will finish the exam and his/her score will be displayed on the screen.
  ## 4. Database design:-
  * In order to fully use SQLite3 server technology, it is essential to make sure that the database is well designed. The files names chosen to label all the tables created within the database attempt to reflect the table's purpose and, therefore, contribute to well-design system. The intimal step in designing was to decide, according to the requirements and specifications of the project, which tables should be created, and what type of information each one should hold.
+ # STEPS INVOLVED TO EXECUTE
+ - create a virtual environment on command prompt or on your terminal.
+ -  Install requirements
+ -  Run the command in virtual environment(flask run/python app.py)
+ -  Click on the generated link and access the portal
+
+### For quires contact - reddy89190@gmail.com
